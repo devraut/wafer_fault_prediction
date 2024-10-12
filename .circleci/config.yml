@@ -35,8 +35,6 @@ jobs:
           destination: tr1
       - store_test_results:
           path: test-reports/
-      - setup_remote_docker:
-          version: Docker 24
       - run:
           name: Build and push Docker image
           command: |
