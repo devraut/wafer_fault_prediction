@@ -36,7 +36,7 @@ jobs:
       - store_test_results:
           path: test-reports/
       - setup_remote_docker:
-          version: 19.03.13
+          version: edge
       - run:
           name: Build and push Docker image
           command: |
@@ -52,6 +52,8 @@ jobs:
           command: |
             git rev-parse HEAD > ./commit.txt
       - heroku/install
+      - setup_remote_docker:
+          version: edge
       - run:
           name: Pushing to heroku registry
           command: |
